@@ -1,0 +1,264 @@
+.avastar-container{
+  width: 750rpx;
+  height: 424rpx;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 16px;
+  color: #fff;
+}
+.avastar-background{
+  width: 750rpx;
+  height: 424rpx;
+  position: absolute;
+  top: 0;
+  z-index: -999;
+}
+.avastar{
+  width: 160rpx;
+  height: 160rpx;
+  border-radius: 50%;
+  margin-top: 106rpx;
+}
+.infos-container{
+  display: flex;
+  flex-direction: column;
+  border-bottom: 6px solid #f5f5f5;
+}
+.info-container{
+  padding: 28rpx 0;
+  margin: 0 30rpx;
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 1px solid #c7c7c7;
+}
+.no-border{
+  border: none;
+}
+.label-container{
+  display: flex;
+  align-items: center;
+}
+.label-img{
+  width: 40rpx;
+  height: 40rpx;
+  margin-right: 26rpx;
+}
+.label-text{
+  color: #030303;
+  font-size: 14px;
+}
+.value-container{
+  display: flex;
+  align-items: center;
+}
+.value{
+  color: #c6c6c6;
+  font-size: 14px;
+}
+.input{
+  width: 14rpx;
+  height: 28rpx;
+  margin-left: 26rpx;
+}
+.update-value{
+  color: #826fca;
+  font-size: 15px;
+}
+.bigpop-up-container{
+  position: fixed;
+  top: 0;
+  width:100vw;
+  height:100vh;
+  background:rgba(0, 0, 0, 0.1);
+}
+.pop-up-container{
+  position: absolute;
+  top: 200px;
+  left: 50%;
+  margin-left: -335rpx;
+  width: 670rpx;
+  height: 200px;
+  border-radius: 8px;
+  background: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.pop-up-title{
+  font-size: 18px;
+  color: #030303;
+  line-height: 50px;
+}
+.input-box{
+  width: 590rpx;
+  height: 40px;
+  display: flex;
+  border-bottom: 1px solid #c7c7c7;
+  justify-content:space-between;
+  align-items: center;
+}
+.input-box input{
+  width: 120px;
+  font-size: 14px;
+  color: #c6c6c6;
+}
+.get-code,.complete{
+  width: 80px;
+  height: 30px;
+  font-size: 12px;
+  color: #24af67;
+  border: 1px solid #d8d8d8;
+  border-radius: 20px;
+  text-align: center;
+  line-height: 30px;
+}
+.complete{
+  margin-top: 15px;
+}
+
+/* 输入框 */
+.biginput-component{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+}
+.input-component{
+  display: flex;
+  position: absolute;
+  bottom: 0;
+  width: 750rpx;
+  height: 230px;
+  background: #fff;
+}
+.button{
+  height: 36px;
+  font-size: 16px;
+  line-height: 36px;
+  padding: 0 16px;
+  text-align: center;
+}
+.cancel{
+  color: #969696;
+  cursor: pointer;
+}
+.confirm{
+  color: #030303;
+}
+.inputs-container{
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.input-container{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  margin-top: 20px;
+  justify-content: center;
+}
+.stature::after{
+  content: 'cm';
+  color: #8371cb;
+  font-size: 16px;
+  display: inline;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+}
+.weight::after{
+  content: 'kg';
+  color: #8371cb;
+  font-size: 16px;
+  display: inline;
+  position: absolute;
+  bottom: -2px;
+  right: 0;
+}
+.preg-birth{
+ justify-content: space-around;
+}
+.title{
+  font-size: 18px;
+  line-height: 36px;
+  color: #826fca;
+}
+.input-area{
+  width: 160rpx;
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  color: #969696;
+  text-align: center;
+  line-height: 1.6em;
+}
+.select-value{
+  color: #030303;
+  position: relative;
+  border-top: 1px solid #969696;
+  border-bottom: 1px solid #969696;
+}
+
+/* 更新内容 */
+.update-container{
+  width: 100vw;
+  height: 100vh;
+  background: rgba(0, 0, 0, 0.1);
+  position: fixed;
+  top: 0;
+}
+.hint-container{
+  width: 600rpx;
+  height: 800rpx;
+  background: #fff;
+  border-radius: 8px;
+  margin: 20px auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  position: relative;
+}
+.bg{
+  width: 80rpx;
+  height: 80rpx;
+  position: absolute;
+}
+.bg1{
+  transform: rotate(-90deg);
+  left: 10px;
+  top: 10px;
+}
+.bg2{
+  right: 10px;
+  top: 10px;
+}
+.bg3{
+  transform: rotate(-180deg);
+  left: 10px;
+  bottom: 10px;
+}
+.bg4{
+  transform: rotate(90deg);
+  right: 10px;
+  bottom: 10px;
+}
+.hint-title{
+  margin-top: 30px;
+  line-height: 20px;
+}
+.update-content{
+  font-size: 14px;
+  width: 80%;
+}
+.a-update{
+  display: flex;
+  flex-direction: column;
+  margin-top: 10px;
+}
+.update-time{
+  margin-bottom: 15px;
+}

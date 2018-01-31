@@ -1,0 +1,123 @@
+<view>
+  <!-- 头像容器 -->
+  <view class='avastar-container'>
+    <image class='avastar-background' src='/img/avastarBackground.png'></image>
+    <image class='avastar' src='/img/avastar.png'></image>
+    <text>Ultrame</text>
+  </view>
+  <!-- 信息容器 -->
+  <view class='infos-container'>
+    <view class='info-container' catchtap='toInputPhone'>
+      <view class='label-container'>
+        <image class='label-img phone' src='/img/label1.png'></image>
+        <text class='label-text'>手机号</text>
+      </view>
+      <view class='value-container'>
+        <text class='value'>{{phoneValue}}</text>
+        <image class='input' src='/img/toLeft.png'></image>
+      </view>
+    </view>
+    <view class='info-container' catchtap='toInput' data-type="pregnant" data-defaultValue="8">
+      <view class='label-container'>
+        <image class='label-img' src='/img/label2.png'></image>
+        <text class='label-text'>孕期</text>
+      </view>
+      <view class='value-container'>
+        <text class='value'>{{pregnantValue}}</text>
+        <image class='input' src='/img/toLeft.png'></image>
+      </view>
+    </view>
+    <view class='info-container' catchtap='toInput' data-type="birthday" data-defaultValue="1992,10">
+      <view class='label-container'>
+        <image class='label-img birthday' src='/img/label3.png'></image>
+        <text class='label-text'>生日</text>
+      </view>
+      <view class='value-container'>
+        <text class='value'>{{birthdayValue}}</text>
+        <image class='input' src='/img/toLeft.png'></image>
+      </view>
+    </view>
+    <view class='info-container' catchtap='toInput' data-type="stature" data-defaultValue="172">
+      <view class='label-container'>
+        <image class='label-img' src='/img/label4.png'></image>
+        <text class='label-text'>身高</text>
+      </view>
+      <view class='value-container'>
+        <text class='value'>{{statureValue}}</text>
+        <image class='input' src='/img/toLeft.png'></image>
+      </view>
+    </view>
+    <view class='info-container no-border' catchtap='toInput' data-type="weight" data-defaultValue="55">
+      <view class='label-container'>
+        <image class='label-img' src='/img/label5.png'></image>
+        <text class='label-text'>体重</text>
+      </view>
+      <view class='value-container'>
+        <text class='value'>{{weightValue}}</text>
+        <image class='input' src='/img/toLeft.png'></image>
+      </view>
+    </view>
+  </view>
+  <!-- 更新容器 -->
+  <view class='infos-container'>
+    <view class='info-container no-border'>
+      <view class='label-container'>
+        <image class='label-img' src='/img/label6.png'></image>
+        <text class='label-text'>更新</text>
+      </view>
+      <view class='value-container'>
+        <text class='update-value'>有更新</text>
+        <image class='input' src='/img/toLeft.png'></image>
+      </view>
+    </view>
+  </view>
+</view>
+
+<!-- 输入手机弹窗 -->
+<view class='bigpop-up-container' wx:if="{{inputtingPhone}}">
+  <view class='pop-up-container'>
+    <text class='pop-up-title'>编辑手机号</text>
+    <view class='input-box'>
+      <input placeholder='请输入手机号'></input>
+    </view>
+    <view class='input-box'>
+      <input placeholder='请输入验证码'></input>
+      <view class='get-code'>获取验证码</view>
+    </view>
+    <view class='complete' catchtap='complete'>完成</view>
+  </view>
+</view>
+
+<!-- 输入框 -->
+<view wx:if="{{inputting}}" class='biginput-component'>
+  <view style="margin-bottom:{{marginBottom}}" class="input-component">
+    <text class='button cancel' catchtap='cancel'>取消</text>
+    <view class='inputs-container'>
+      <text class='title'>{{title}}</text>
+      <!-- <view class='input-container'> -->
+      <view class="{{(birthday || pregnant)?'input-container preg-birth':'input-container'}}">
+        <!-- 根据不同类型的输入框，切换其class。eg:birthday,pregnant。将这两个class名加在input-container后面 -->
+        <!-- 如果输入类型为 weight 或 stature ,则在class名为 select-value 后面加上 weight 或 stature -->
+        <text wx:if="{{pregnant}}" style='color:#826fca;'>第</text>
+        <view wx:if="{{pregnant || birthday || stature || weight}}" class='input-area' catchtouchstart='touchStart' catchtouchmove='touchMoveA' catchtouchend='touchEnd'>
+          <text>{{inputDatasA[0]}}</text>
+          <text>{{inputDatasA[1]}}</text>
+          <text class="{{(!stature && !weight)?'select-value':(stature?'select-value stature':'select-value weight')}}">{{inputDatasA[2]}}</text>
+          <text>{{inputDatasA[3]}}</text>
+          <text>{{inputDatasA[4]}}</text>
+        </view>
+        <text wx:if="{{pregnant}}" style='color:#826fca;'>周</text>
+        <text wx:if="{{birthday}}" style='color:#826fca;'>年</text>
+        <view wx:if="{{birthday}}" class='input-area' catchtouchstart='touchStart' catchtouchmove='touchMoveB' catchtouchend='touchEnd'>
+          <text>{{inputDatasB[0]}}</text>
+          <text>{{inputDatasB[1]}}</text>
+          <text class='select-value'>{{inputDatasB[2]}}</text>
+          <text>{{inputDatasB[3]}}</text>
+          <text>{{inputDatasB[4]}}</text>
+        </view>
+        <text wx:if="{{birthday}}" style='color:#826fca;'>月</text>
+      </view>
+    </view>
+    <text class='button confirm' catchtap='confirm'>确定</text>
+  </view>
+</view>
